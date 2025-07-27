@@ -5,15 +5,18 @@ metadata:
 spec:
   containers:
   - name: kiada
-    image: luksa/kiada:0.2
+    image: quay.io/maciek01220/kiada:0.2
     stdin: true
     ports:
     - name: http
       containerPort: 8080
   - name: envoy
-    image: luksa/kiada-ssl-proxy:0.1
+    image: quay.io/maciek01220/kiada-ssl-proxy:0.1
     ports:
     - name: https
       containerPort: 8443
     - name: admin
       containerPort: 9901
+    env:
+    - name: ENVOY_UID
+      value: '0'

@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   - name: kiada
-    image: luksa/kiada:0.1
+    image: quay.io/maciek01220/kiada:0.2
     imagePullPolicy: IfNotPresent
     ports:
     - containerPort: 8080
