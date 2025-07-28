@@ -1,5 +1,5 @@
 #!/bin/sh
-
+sleep 1h
 echo "[traffic-meter] Starting traffic meter..."
 
 INTERFACE="eth0"
