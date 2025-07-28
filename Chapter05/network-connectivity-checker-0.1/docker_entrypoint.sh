@@ -3,9 +3,8 @@
 host=${1:-1.1.1.1}
 echo "Checking network connectivity to ${host} ..."
 
-ping ${host} -c 1 # >/dev/null 2>/dev/null
+/bin/ping ${host} -c 1 >/dev/null 2>/dev/null
 pingExitCode=$?
-sleep 1h
 if [ $pingExitCode = 0 ]; then
   echo "Host $host appears to be reachable"
   exit 0
