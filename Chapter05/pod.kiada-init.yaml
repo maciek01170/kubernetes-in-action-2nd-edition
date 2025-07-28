@@ -19,8 +19,13 @@ spec:
       containerPort: 8080
   - name: envoy
     image: quay.io/maciek01220/kiada-ssl-proxy:0.1
+    imagePullPolicy: Always
     ports:
     - name: https
       containerPort: 8443
     - name: admin
       containerPort: 9901
+    env:
+      - name: ENVOY_UID
+        value: '0'
+

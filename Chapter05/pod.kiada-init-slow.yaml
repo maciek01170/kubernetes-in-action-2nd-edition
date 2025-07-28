@@ -24,3 +24,6 @@ spec:
       containerPort: 8443
     - name: admin
       containerPort: 9901
+    env:
+    - name: ENVOY_UID
+      value: '0'
