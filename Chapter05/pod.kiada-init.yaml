@@ -6,6 +6,7 @@ spec:
   initContainers:
   - name: init-demo
     image: quay.io/maciek01220/init-demo:0.1
+    imagePullPolicy: Always
   - name: network-check
     image: quay.io/maciek01220/network-connectivity-checker:0.1
   containers:
