@@ -9,6 +9,7 @@ spec:
     imagePullPolicy: Always
   - name: network-check
     image: quay.io/maciek01220/network-connectivity-checker:0.1
+    imagePullPolicy: Always
   containers:
   - name: kiada
     image: quay.io/maciek01220/kiada:0.2
