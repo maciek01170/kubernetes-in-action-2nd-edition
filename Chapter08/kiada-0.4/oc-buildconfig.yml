@@ -1,0 +1,34 @@
+---
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  name: kiada
+  namespace: kiada
+spec:
+  nodeSelector: null
+  output:
+    to:
+      kind: DockerImage
+      name: 'quay.io/maciek01220/kiada:0.4'
+    pushSecret:
+      name: maciek01220-quay-push-pull-secret
+  resources:
+    requests:
+      cpu: 500m
+      memory: 512Mi
+  successfulBuildsHistoryLimit: 5
+  failedBuildsHistoryLimit: 5
+  strategy:
+    type: Docker
+    dockerStrategy:
+      forcePull: true
+  postCommit: {}
+  serviceAccount: builder
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/maciek01170/kubernetes-in-action-2nd-edition.git'
+      ref: 'training/202507'
+    contextDir: /Chapter08/kiada-0.4
+
+  runPolicy: Serial
