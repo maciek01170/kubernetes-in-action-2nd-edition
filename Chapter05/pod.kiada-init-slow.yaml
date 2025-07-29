@@ -6,10 +6,12 @@ spec:
   initContainers:
   - name: init-demo
     image: quay.io/maciek01220/init-demo:0.1
+    imagePullPolicy: Always
     args:
     - "60"
   - name: network-check
     image: quay.io/maciek01220/network-connectivity-checker:0.1
+    imagePullPolicy: Always
   containers:
   - name: kiada
     image: quay.io/maciek01220/kiada:0.2
@@ -19,6 +21,7 @@ spec:
       containerPort: 8080
   - name: envoy
     image: quay.io/maciek01220/kiada-ssl-proxy:0.1
+    imagePullPolicy: Always
     ports:
     - name: https
       containerPort: 8443
