@@ -11,8 +11,8 @@ spec:
     emptyDir: {}
   containers:
   - name: quote-writer
-    image: luksa/quote-writer:0.1
-    imagePullPolicy: IfNotPresent
+    image: quay.io/maciek01220/quote-writer:0.1
+    imagePullPolicy: Always
     volumeMounts:
     - name: shared
       mountPath: /var/local/output
