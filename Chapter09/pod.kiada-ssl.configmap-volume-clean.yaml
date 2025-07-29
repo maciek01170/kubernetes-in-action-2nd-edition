@@ -12,7 +12,7 @@ spec:
         path: envoy.yaml
   containers:
   - name: kiada
-    image: luksa/kiada:0.4
+    image: quay.io/maciek01220/kiada:0.4
     env:
     - name: POD_NAME
       valueFrom:
@@ -40,7 +40,7 @@ spec:
     - name: http
       containerPort: 8080
   - name: envoy
-    image: luksa/kiada-ssl-proxy:0.1
+    image: quay.io/maciek01220/kiada-ssl-proxy:0.1
     volumeMounts:
     - name: envoy-config
       mountPath: /etc/envoy

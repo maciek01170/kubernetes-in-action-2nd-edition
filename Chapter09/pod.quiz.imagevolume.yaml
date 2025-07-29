@@ -6,13 +6,13 @@ spec:
   volumes:
   - name: initdb
     image:
-      reference: luksa/quiz-questions:latest
+      reference: quay.io/maciek01220/quiz-questions:latest
       pullPolicy: Always
   - name: quiz-data
     emptyDir: {}
   containers:
   - name: quiz-api
-    image: luksa/quiz-api:0.1
+    image: quay.io/maciek01220/quiz-api:0.1
     imagePullPolicy: IfNotPresent
     ports:
     - name: http
